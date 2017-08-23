@@ -1,0 +1,16 @@
+<div class="row">
+  <div class="col-md-6">
+    <ul>
+      <% @posts.each do |post| %>
+        <li>
+          <p>
+            <%= post.user.name %> <span><%= post.created_at %></span>
+          </p>
+          <p>
+            <%= post.body %>
+          </p>
+        </li>
+      <% end %>
+    </ul>
+  </div>
+</div>
