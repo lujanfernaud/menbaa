@@ -4,7 +4,10 @@
       <% @posts.each do |post| %>
         <li>
           <p>
-            <%= post.user.name %> <span><%= post.created_at %></span>
+            <% if logged_in? %>
+              <%= post.user.name + " " %>
+            <% end %>
+            <span><%= post.created_at %></span>
           </p>
           <p>
             <%= post.body %>
