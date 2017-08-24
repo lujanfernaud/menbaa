@@ -1,0 +1,25 @@
+<%= provide(:title, "New message") %>
+<h1 class="text-center">New message</h1>
+
+<div class="row">
+  <div class="col-md-12">
+    <%= form_for @post do |f| %>
+
+      <% if @post.errors.any? %>
+        <div id="error_explanation">
+          <h2><%= pluralize(@post.errors.count, "error") %>:</h2>
+          <ul>
+          <% @post.errors.full_messages.each do |msg| %>
+            <li><%= msg %></li>
+          <% end %>
+          </ul>
+        </div>
+      <% end %>
+
+      <%= f.label :body, class: "hidden" %>
+      <%= f.text_field :body, class: "form-control" %>
+
+      <%= f.submit "Post message", class: "btn btn-primary btn-block" %>
+    <% end %>
+  </div>
+</div>

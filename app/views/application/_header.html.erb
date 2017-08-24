@@ -4,19 +4,26 @@
 
       <% unless logged_in? %>
         <li role="presentation">
-          <%= link_to "Sign up", signup_path %>
+          <%= link_to "Sign up", signup_path, class: "btn btn-block" %>
         </li>
 
-        <li role="presentation" class="active">
-          <%= link_to "Log in", login_path %>
+        <li role="presentation">
+          <%= link_to "Log in", login_path, class: "btn btn-block" %>
         </li>
       <% else %>
         <li role="presentation">
-          <%= link_to "Log out", logout_path, method: :delete %>
+          <%= link_to "New message",
+              new_post_path,
+              class: "btn btn-primary btn-block" %>
+        </li>
+        <li role="presentation">
+          <%= link_to "Log out", logout_path, method: :delete, class: "btn btn-block" %>
         </li>
       <% end %>
 
     </ul>
   </nav>
-  <h3 class="text-muted">Members Only!</h3>
+  <h3 class="text-muted">
+    <%= link_to "Members Only!", root_path %>
+  </h3>
 </div>
