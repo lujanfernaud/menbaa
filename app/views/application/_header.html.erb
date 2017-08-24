@@ -3,6 +3,10 @@
     <ul class="nav nav-pills pull-right">
 
       <% unless logged_in? %>
+        <li role="presentation">
+          <%= link_to "Sign up", signup_path %>
+        </li>
+
         <li role="presentation" class="active">
           <%= link_to "Log in", login_path %>
         </li>
