@@ -1,16 +1,22 @@
 <div class="row">
   <div class="col-md-12">
-    <ul>
+    <ul class="list-unstyled">
       <% @posts.reverse.each do |post| %>
-        <li>
-          <p>
-            <% if logged_in? %>
-              <%= post.user.name + " " %>
-            <% end %>
-            <span><%= post.created_at %></span>
-          </p>
+        <li class="post">
           <p>
             <%= post.body %>
+          </p>
+          <p>
+            <em class="post-user">
+              <% if logged_in? %>
+                <%= post.user.name + " " %>
+              <% else %>
+                xxx
+              <% end %>
+            </em>
+            <span class="post-id pull-right" id="<%= post.id %>">
+              <%= link_to "# #{post.id}", root_path + "##{post.id}" %>
+            </span>
           </p>
         </li>
       <% end %>

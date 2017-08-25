@@ -2,15 +2,94 @@
 @import "bootstrap";
 
 
-/* Main */
+/* Body, Container & Typography */
 
 
 body {
   padding-top: 20px;
+  background-color: #eee;
+  font-size: 18px;
+  color: #2e2e2e;
 }
 
 .container {
   max-width: 730px;
+}
+
+h3 {
+  margin-left: 5px;
+}
+
+
+/* Header */
+
+
+.header {
+  margin-top: 10px;
+  margin-bottom: 10px;
+}
+
+.header-title {
+  font-family: Georgia, serif;
+  font-size: 1.5em;
+  font-weight: 600;
+  font-style: italic;
+  color: #4c4c4c;
+  text-shadow: 1px 1px #fff;
+}
+
+.header-link {
+  margin-top: 15px;
+}
+
+
+/* Main */
+
+
+.page-title {
+  margin-bottom: 20px;
+}
+
+form {
+  font-size: 0.9em;
+}
+
+label {
+  margin-top: 10px;
+}
+
+#error_explanation {
+  color: #f00;
+  ul {
+    margin: 0 0 18px 0;
+  }
+}
+
+.post {
+  margin: 25px 20px 25px 20px;
+  padding: 18px 18px 5px;
+  background-color: #fff;
+  font-family: Georgia, serif;
+  border: 1px solid #ddd;
+}
+
+.post-user {
+  font-size: 0.9em;
+}
+
+.post-id {
+  padding-top: 3px;
+  font-family: Arial, sans-serif;
+  font-size: 0.86em;
+  color: #6c6b6b;
+}
+
+#session_remember_me {
+  margin-left: 0;
+}
+
+label.checkbox > span {
+  margin-left: 20px;
 }
 
 
