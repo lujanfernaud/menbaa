@@ -7,4 +7,8 @@ module ApplicationHelper
   def index?(controller_name, action_name)
     controller_name == "posts" && action_name == "index"
   end
+
+  def login?(controller_name)
+    controller_name == "sessions"
+  end
 end

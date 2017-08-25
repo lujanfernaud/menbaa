@@ -10,7 +10,7 @@
       <%= render "header" if index?(controller_name, action_name) %>
 
       <div class="row">
-        <%= render "flash_alerts" %>
+        <%= render "flash_alerts" unless login?(controller_name) %>
         <%= yield %>
       </div>
     </div>
