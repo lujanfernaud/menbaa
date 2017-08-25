@@ -7,8 +7,7 @@
 
   <body>
     <div class="container">
-      <%= render "header" if controller_name == "posts" &&
-            action_name == "index" %>
+      <%= render "header" if index?(controller_name, action_name) %>
 
       <div class="row">
         <%= render "flash_alerts" %>
