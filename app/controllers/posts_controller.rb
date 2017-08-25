@@ -1,5 +1,6 @@
 class PostsController < ApplicationController
   before_action :check_if_logged_in, except: :index
+  before_action :check_if_author,    only:   :destroy
 
   def index
     @posts = Post.all
@@ -20,6 +21,15 @@ class PostsController < ApplicationController
     end
   end
 
+  def destroy
+    post    = Post.find_by(id: params[:id])
+    post_id = post.id
+    post.delete
+
+    flash[:info] = "Message ##{post_id} deleted."
+    redirect_to root_path
+  end
+
   private
 
     def check_if_logged_in
@@ -27,5 +37,9 @@ class PostsController < ApplicationController
 
       flash[:info] = "You need to be logged in to do that."
       redirect_to login_path
+    end
+
+    def check_if_author
+      return false unless current_user.id == params[:user_id]
     end
 end

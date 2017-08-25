@@ -15,6 +15,10 @@
               <% end %>
             </em>
             <span class="post-id pull-right" id="<%= post.id %>">
+              <% if author?(post) %>
+                <%= link_to "Delete", post_path(post), method: :delete,
+                    data: { confirm: "Are you sure?" } %><%= " | " %>
+              <% end %>
               <%= link_to "# #{post.id}", root_path + "##{post.id}" %>
             </span>
           </p>
