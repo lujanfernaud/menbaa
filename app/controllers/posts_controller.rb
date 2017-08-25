@@ -11,7 +11,7 @@ class PostsController < ApplicationController
 
   def create
     @user = current_user
-    @post = Post.new(user_id: @user.id, body: params[:post][:body])
+    @post = Post.new(user_id: @user.id, body: params[:post][:body].capitalize)
 
     if @post.save
       redirect_to root_path
