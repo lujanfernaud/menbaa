@@ -28,7 +28,6 @@ class UserDashboard < Administrate::BaseDashboard
     :id,
     :name,
     :email,
-    :password_digest,
   ].freeze
 
   # SHOW_PAGE_ATTRIBUTES
@@ -37,10 +36,8 @@ class UserDashboard < Administrate::BaseDashboard
     :id,
     :name,
     :email,
-    :password_digest,
     :created_at,
     :updated_at,
-    :remember_digest,
   ].freeze
 
   # FORM_ATTRIBUTES
