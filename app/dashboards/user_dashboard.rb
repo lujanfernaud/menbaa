@@ -11,6 +11,8 @@ class UserDashboard < Administrate::BaseDashboard
     id: Field::Number,
     name: Field::String,
     email: Field::String,
+    password: Field::String,
+    password_confirmation: Field::String,
     password_digest: Field::String,
     created_at: Field::DateTime,
     updated_at: Field::DateTime,
@@ -47,8 +49,8 @@ class UserDashboard < Administrate::BaseDashboard
   FORM_ATTRIBUTES = [
     :name,
     :email,
-    :password_digest,
-    :remember_digest,
+    :password,
+    :password_confirmation,
   ].freeze
 
   # Overwrite this method to customize how users are displayed
