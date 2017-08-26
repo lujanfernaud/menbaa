@@ -27,3 +27,4 @@ notes.md
 /yarn-error.log
 
 .byebug_history
+.env
