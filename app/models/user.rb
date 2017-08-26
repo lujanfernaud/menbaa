@@ -1,4 +1,7 @@
 class User < ApplicationRecord
+  include Humanizer
+  require_human_on :create if Rails.env.production?
+
   attr_accessor :remember_token
 
   validates :name,  presence: true, length: { in: 2..50 },

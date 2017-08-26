@@ -18,6 +18,10 @@
       <%= f.label :password_confirmation %>
       <%= f.password_field :password_confirmation, class: "form-control" %>
 
+      <%= f.label :humanizer_answer, @user.humanizer_question %>
+      <%= f.text_field :humanizer_answer, class: "form-control" %>
+      <%= f.hidden_field :humanizer_question_id %>
+
       <%= f.submit "Sign up", class: "btn btn-primary btn-lg btn-block" %>
     <% end %>
   </div>

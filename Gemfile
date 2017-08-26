@@ -10,6 +10,8 @@ end
 gem 'rails', '~> 5.1.3'
 # Use Administrate admin dashboard
 gem 'administrate'
+# Use Humanizer as a simple CAPTCHA
+gem 'humanizer'
 # Use Bootstrap framework
 gem 'bootstrap-sass', '3.3.7'
 gem 'jquery-rails',   '4.3.1'
