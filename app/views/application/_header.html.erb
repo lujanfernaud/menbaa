@@ -8,7 +8,8 @@
         </li>
 
         <li role="presentation">
-          <%= link_to "Log in", login_path, class: "header-link" %>
+          <%= link_to "Log in", login_path,
+              class: "header-link header-session-link" %>
         </li>
       <% else %>
         <li role="presentation">
@@ -18,7 +19,7 @@
           <%= link_to "#{current_user.name} (Log out)",
               logout_path,
               method: :delete,
-              class: "header-link" %>
+              class: "header-link header-session-link" %>
         </li>
       <% end %>
 
