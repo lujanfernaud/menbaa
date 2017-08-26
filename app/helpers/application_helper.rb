@@ -11,4 +11,12 @@ module ApplicationHelper
   def login?(controller_name)
     controller_name == "sessions"
   end
+
+  def admin?
+    logged_in? && current_user.admin
+  end
+
+  def not_admin?
+    logged_in? && !current_user.admin
+  end
 end

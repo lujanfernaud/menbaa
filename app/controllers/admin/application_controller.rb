@@ -6,10 +6,21 @@
 # you're free to overwrite the RESTful controller actions.
 module Admin
   class ApplicationController < Administrate::ApplicationController
+    include ApplicationHelper
+    include SessionsHelper
+
     before_action :authenticate_admin
 
     def authenticate_admin
-      # TODO Add authentication logic here.
+      return if admin?
+
+      if not_admin?
+        flash[:danger] = "You don't have the rights to access this resource."
+        redirect_to root_url
+      else
+        flash[:danger] = "You need to be logged in to access this resource."
+        redirect_to login_path
+      end
     end
 
     # Override this value to specify the number of elements to display at a time

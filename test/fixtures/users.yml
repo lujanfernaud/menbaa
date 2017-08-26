@@ -4,3 +4,9 @@ hiro:
   name: Hiro
   email: hiro@testuser.com
   password_digest: <%= BCrypt::Password.create("password") %>
+
+admin:
+  name: Admin
+  email: admin@admin.com
+  password_digest: <%= BCrypt::Password.create("password") %>
+  admin: true
