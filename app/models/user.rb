@@ -1,6 +1,6 @@
 class User < ApplicationRecord
   include Humanizer
-  require_human_on :create if Rails.env.production?
+  require_human_on :create, unless: :bypass_humanizer if Rails.env.production?
 
   attr_accessor :remember_token
 

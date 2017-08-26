@@ -18,6 +18,7 @@ class UserDashboard < Administrate::BaseDashboard
     updated_at: Field::DateTime,
     remember_digest: Field::String,
     admin: Field::Boolean,
+    bypass_humanizer: Field::Boolean,
   }.freeze
 
   # COLLECTION_ATTRIBUTES
@@ -51,6 +52,7 @@ class UserDashboard < Administrate::BaseDashboard
     :email,
     :password,
     :password_confirmation,
+    :bypass_humanizer,
   ].freeze
 
   # Overwrite this method to customize how users are displayed
