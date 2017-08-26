@@ -13,6 +13,8 @@
         <%= render "flash_alerts" unless login?(controller_name) %>
         <%= yield %>
       </div>
+
+      <%= render "footer" if index?(controller_name, action_name) %>
     </div>
   </body>
 </html>
