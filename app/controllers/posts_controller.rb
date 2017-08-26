@@ -12,7 +12,7 @@ class PostsController < ApplicationController
 
   def create
     @user = current_user
-    @post = Post.new(user_id: @user.id, body: params[:post][:body].capitalize)
+    @post = Post.new(user_id: @user.id, body: post_body)
 
     if @post.save
       redirect_to root_path
@@ -41,5 +41,10 @@ class PostsController < ApplicationController
 
     def check_if_author
       return false unless current_user.id == params[:user_id]
+    end
+
+    def post_body
+      body = params[:post][:body]
+      body[0].upcase + body[1..-1]
     end
 end
