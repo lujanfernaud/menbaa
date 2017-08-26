@@ -4,19 +4,7 @@
 <div class="row">
   <div class="col-md-12">
     <%= form_for @post do |f| %>
-
-      <% if @post.errors.any? %>
-        <div id="error_explanation">
-          <div class="alert alert-danger">
-            <h2 class="h4"><%= pluralize(@post.errors.count, "error") %>:</h2>
-            <ul class="list-styled">
-            <% @post.errors.full_messages.each do |msg| %>
-              <li><%= msg %></li>
-            <% end %>
-            </ul>
-          </div>
-        </div>
-      <% end %>
+      <%= render "errors", object: @post %>
 
       <%= f.label :body, class: "hidden" %>
       <%= f.text_field :body, class: "form-control", autofocus: true %>
