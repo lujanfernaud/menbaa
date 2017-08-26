@@ -17,6 +17,7 @@ class UserDashboard < Administrate::BaseDashboard
     created_at: Field::DateTime,
     updated_at: Field::DateTime,
     remember_digest: Field::String,
+    admin: Field::Boolean,
   }.freeze
 
   # COLLECTION_ATTRIBUTES
@@ -28,6 +29,8 @@ class UserDashboard < Administrate::BaseDashboard
     :id,
     :name,
     :email,
+    :admin,
+    :created_at,
   ].freeze
 
   # SHOW_PAGE_ATTRIBUTES
