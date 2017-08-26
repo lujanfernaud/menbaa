@@ -23,6 +23,15 @@ class PostMessagesTest < ActionDispatch::IntegrationTest
     assert_current_path posts_path
   end
 
+  test "post an empty message" do
+    log_in
+    visit new_post_path
+    assert_current_path new_post_path
+    fill_in "Body", with: ""
+    click_on "Post message"
+    assert_current_path posts_path
+  end
+
   test "try to visit 'posts/new' without being logged in" do
     visit new_post_path
     assert_current_path login_path

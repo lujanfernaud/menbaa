@@ -44,7 +44,7 @@ class PostsController < ApplicationController
     end
 
     def post_body
-      body = params[:post][:body]
-      body[0].upcase + body[1..-1]
+      body = params[:post][:body].to_s
+      body.first.upcase + body[1..-1].to_s
     end
 end
